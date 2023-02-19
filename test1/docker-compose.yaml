@@ -1,0 +1,12 @@
+version: '3'
+services:
+  anonymizer: &base
+    build:
+      context: .
+    volumes:
+      - "./output:/code/output"
+  
+
+  unittest:
+    <<: *base
+    command: pytest
